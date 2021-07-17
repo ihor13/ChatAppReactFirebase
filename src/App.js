@@ -51,10 +51,10 @@ function SignIn() {
   }
 
   return (
-    <>
+    <div>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
       <p>Do not violate the community guidelines or you will be banned for life!</p>
-    </>
+    </div>
   )
 
 }
@@ -92,7 +92,7 @@ function ChatRoom() {
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-  return (<>
+  return (<div>
     <main>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
@@ -108,7 +108,7 @@ function ChatRoom() {
       <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
-  </>)
+  </div>)
 }
 
 
@@ -117,12 +117,12 @@ function ChatMessage(props) {
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
-  return (<>
+  return (<div>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{text}</p>
     </div>
-  </>)
+  </div>)
 }
 
 
